@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Register_N_bits is
+generic(N : positive := 10);
+port(
+		Clock,Enable,Reset: in std_logic;
+		input: in std_logic_vector(N-1 downto 0);
+		output: out std_logic_vector(N-1 downto 0)
+		);
