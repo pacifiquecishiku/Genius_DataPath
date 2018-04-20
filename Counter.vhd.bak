@@ -6,6 +6,7 @@ use ieee.std_logic_unsigned.all;
 entity Counter is
 port(
 		Enable, Clock, Reset : in std_logic;
+		End_Time : out std_logic;
 		Output : out std_logic_vector(3 downto 0)
 		);
 end entity;
@@ -20,10 +21,14 @@ process (Clock, Enable, Output_Sig, Reset)
 	begin
 		if Reset = '1' then
 			Output_Sig <= "1001";
+			End_Time <= '0';
 		elsif(rising_edge(Clock) and Enable = '1') then
 			Output_Sig <= Output_Sig - "0001";
 			if Output_Sig = "0000" then
+				End_Time <= '1';
 				Output_Sig <= "1001";
+			else 
+				End_Time <= '0';
 			end if;
 		end if;
 	

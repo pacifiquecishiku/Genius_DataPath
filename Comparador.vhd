@@ -13,5 +13,5 @@ architecture Arch_Comp of Comparador is
 begin
 
 output <= '1' when inputA = inputB else
-				'0';
+			 '0';
 end Arch_Comp;
