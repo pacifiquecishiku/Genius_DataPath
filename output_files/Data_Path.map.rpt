@@ -1,0 +1,526 @@
+Analysis & Synthesis report for Data_Path
+Fri Apr 20 19:48:50 2018
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Comparador:Comparador_4_bit
+ 13. Parameter Settings for User Entity Instance: Comparador:Comparador_64_bit
+ 14. Parameter Settings for User Entity Instance: Register_N_bits:Reg_Ledr
+ 15. Parameter Settings for User Entity Instance: Register_N_bits:Reg_7seg
+ 16. Port Connectivity Checks: "decod7seg:dec_HEX4"
+ 17. Port Connectivity Checks: "Mux4_1_8_bit:Mux_ponctuation"
+ 18. Port Connectivity Checks: "Mux2_1_10bits:Mux_led"
+ 19. Port Connectivity Checks: "Clocks:Clocks_Source"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Apr 20 19:48:50 2018      ;
+; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                   ; Data_Path                                  ;
+; Top-level Entity Name           ; Data_Path                                  ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 296                                        ;
+; Total pins                      ; 69                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 0                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI PMA TX Serializers   ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Data_Path          ; Data_Path          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; ROM.vhd                          ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/ROM.vhd                ;         ;
+; decod7seg.vhd                    ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/decod7seg.vhd          ;         ;
+; Clocks.vhd                       ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Clocks.vhd             ;         ;
+; Data_Path.vhd                    ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Data_Path.vhd          ;         ;
+; Counter_Signal_out.vhd           ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Counter_Signal_out.vhd ;         ;
+; Counter.vhd                      ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Counter.vhd            ;         ;
+; Register_N_bits.vhd              ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Register_N_bits.vhd    ;         ;
+; Comparador.vhd                   ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Comparador.vhd         ;         ;
+; decodLedr.vhd                    ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/decodLedr.vhd          ;         ;
+; Mux2_1_10bits.vhd                ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Mux2_1_10bits.vhd      ;         ;
+; Register_Shift.vhd               ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Register_Shift.vhd     ;         ;
+; Mux4_1_8_bit.vhd                 ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Mux4_1_8_bit.vhd       ;         ;
+; Mux4_1_1_bit.vhd                 ; yes             ; User VHDL File  ; /home/labsdg-admin/Documents/PCM/Genius/Genius_DataPath_-master/Mux4_1_1_bit.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                  ;
++---------------------------------------------+--------------------------------+
+; Resource                                    ; Usage                          ;
++---------------------------------------------+--------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 189                            ;
+;                                             ;                                ;
+; Combinational ALUT usage for logic          ; 300                            ;
+;     -- 7 input functions                    ; 0                              ;
+;     -- 6 input functions                    ; 54                             ;
+;     -- 5 input functions                    ; 11                             ;
+;     -- 4 input functions                    ; 30                             ;
+;     -- <=3 input functions                  ; 205                            ;
+;                                             ;                                ;
+; Dedicated logic registers                   ; 296                            ;
+;                                             ;                                ;
+; I/O pins                                    ; 69                             ;
+;                                             ;                                ;
+; Total DSP Blocks                            ; 0                              ;
+;                                             ;                                ;
+; Maximum fan-out node                        ; Mux4_1_1_bit:Mux_Clocks|Output ;
+; Maximum fan-out                             ; 164                            ;
+; Total fan-out                               ; 2058                           ;
+; Average fan-out                             ; 2.80                           ;
++---------------------------------------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                          ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------+--------------+
+; |Data_Path                            ; 300 (2)           ; 296 (0)      ; 0                 ; 0          ; 69   ; 0            ; |Data_Path                                  ; work         ;
+;    |Clocks:Clocks_Source|             ; 211 (211)         ; 132 (132)    ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Clocks:Clocks_Source             ; work         ;
+;    |Comparador:Comparador_4_bit|      ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Comparador:Comparador_4_bit      ; work         ;
+;    |Comparador:Comparador_64_bit|     ; 26 (26)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Comparador:Comparador_64_bit     ; work         ;
+;    |Counter:Counter_Ponct|            ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Counter:Counter_Ponct            ; work         ;
+;    |Counter:Counter_Rom|              ; 4 (4)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Counter:Counter_Rom              ; work         ;
+;    |Counter_Signal_out:Counter_Stage| ; 5 (5)             ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Counter_Signal_out:Counter_Stage ; work         ;
+;    |Counter_Signal_out:Counter_Time|  ; 5 (5)             ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Counter_Signal_out:Counter_Time  ; work         ;
+;    |Mux2_1_10bits:Mux_led|            ; 4 (4)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Mux2_1_10bits:Mux_led            ; work         ;
+;    |Mux4_1_1_bit:Mux_Clocks|          ; 3 (3)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Mux4_1_1_bit:Mux_Clocks          ; work         ;
+;    |Mux4_1_8_bit:Mux_ponctuation|     ; 4 (4)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Mux4_1_8_bit:Mux_ponctuation     ; work         ;
+;    |ROM:ROM_mem|                      ; 4 (4)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|ROM:ROM_mem                      ; work         ;
+;    |Register_N_bits:Reg_7seg|         ; 0 (0)             ; 14 (14)      ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Register_N_bits:Reg_7seg         ; work         ;
+;    |Register_N_bits:Reg_Ledr|         ; 2 (2)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Register_N_bits:Reg_Ledr         ; work         ;
+;    |Register_Shift:Reg_Shift_Rom|     ; 0 (0)             ; 64 (64)      ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Register_Shift:Reg_Shift_Rom     ; work         ;
+;    |Register_Shift:Reg_Shift_User|    ; 0 (0)             ; 64 (64)      ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|Register_Shift:Reg_Shift_User    ; work         ;
+;    |decod7seg:dec_HEX2|               ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|decod7seg:dec_HEX2               ; work         ;
+;    |decod7seg:dec_HEX4|               ; 4 (4)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|decod7seg:dec_HEX4               ; work         ;
+;    |decod7seg:decod_Ponct_7seg0|      ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|decod7seg:decod_Ponct_7seg0      ; work         ;
+;    |decod7seg:decod_Ponct_7seg1|      ; 6 (6)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Data_Path|decod7seg:decod_Ponct_7seg1      ; work         ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; Register_N_bits:Reg_Ledr|output[4..9] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 6 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 296   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 292   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 168   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; Counter_Signal_out:Counter_Time|Output_Sig[0]  ; 12      ;
+; Counter_Signal_out:Counter_Time|Output_Sig[3]  ; 11      ;
+; Counter_Signal_out:Counter_Stage|Output_Sig[0] ; 7       ;
+; Counter_Signal_out:Counter_Stage|Output_Sig[3] ; 5       ;
+; Counter:Counter_Rom|Output_Sig[3]              ; 8       ;
+; Counter:Counter_Rom|Output_Sig[0]              ; 9       ;
+; Counter:Counter_Ponct|Output_Sig[0]            ; 13      ;
+; Counter:Counter_Ponct|Output_Sig[3]            ; 16      ;
+; Total number of inverted registers = 8         ;         ;
++------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Data_Path|Register_N_bits:Reg_7seg|output[13] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Data_Path|decod7seg:dec_HEX4|Output[1]        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Data_Path|decod7seg:dec_HEX4|Output[5]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Comparador:Comparador_4_bit ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Comparador:Comparador_64_bit ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 64    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_N_bits:Reg_Ledr ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 10    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_N_bits:Reg_7seg ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 14    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "decod7seg:dec_HEX4" ;
++-------------+-------+----------+---------------+
+; Port        ; Type  ; Severity ; Details       ;
++-------------+-------+----------+---------------+
+; input[3..2] ; Input ; Info     ; Stuck at GND  ;
++-------------+-------+----------+---------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Mux4_1_8_bit:Mux_ponctuation" ;
++--------------+-------+----------+------------------------+
+; Port         ; Type  ; Severity ; Details                ;
++--------------+-------+----------+------------------------+
+; input1[7..4] ; Input ; Info     ; Stuck at GND           ;
+; input2[7..5] ; Input ; Info     ; Stuck at GND           ;
+; input2[0]    ; Input ; Info     ; Stuck at GND           ;
+; input3[7..6] ; Input ; Info     ; Stuck at GND           ;
+; input3[1..0] ; Input ; Info     ; Stuck at GND           ;
+; input4[2..0] ; Input ; Info     ; Stuck at GND           ;
+; input4[7]    ; Input ; Info     ; Stuck at GND           ;
++--------------+-------+----------+------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Mux2_1_10bits:Mux_led" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; input1 ; Input ; Info     ; Stuck at GND          ;
++--------+-------+----------+-----------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Clocks:Clocks_Source" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 296                         ;
+;     CLR               ; 128                         ;
+;     ENA               ; 4                           ;
+;     ENA CLR           ; 164                         ;
+; arriav_lcell_comb     ; 306                         ;
+;     arith             ; 128                         ;
+;         1 data inputs ; 128                         ;
+;     normal            ; 178                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 67                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 54                          ;
+; boundary_port         ; 69                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.80                        ;
+; Average LUT depth     ; 3.10                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Fri Apr 20 19:48:30 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Data_Path -c Data_Path
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file ROM.vhd
+    Info (12022): Found design unit 1: ROM-behavioral
+    Info (12023): Found entity 1: ROM
+Info (12021): Found 2 design units, including 1 entities, in source file decod7seg.vhd
+    Info (12022): Found design unit 1: decod7seg-decod
+    Info (12023): Found entity 1: decod7seg
+Info (12021): Found 2 design units, including 1 entities, in source file Clocks.vhd
+    Info (12022): Found design unit 1: Clocks-FSM_Arch
+    Info (12023): Found entity 1: Clocks
+Info (12021): Found 2 design units, including 1 entities, in source file Data_Path.vhd
+    Info (12022): Found design unit 1: Data_Path-Arch_Data_Path
+    Info (12023): Found entity 1: Data_Path
+Info (12021): Found 2 design units, including 1 entities, in source file Counter_Signal_out.vhd
+    Info (12022): Found design unit 1: Counter_Signal_out-Arch_Counter_Signal_out
+    Info (12023): Found entity 1: Counter_Signal_out
+Info (12021): Found 2 design units, including 1 entities, in source file Counter.vhd
+    Info (12022): Found design unit 1: Counter-Arch_Counter
+    Info (12023): Found entity 1: Counter
+Info (12021): Found 2 design units, including 1 entities, in source file Register_N_bits.vhd
+    Info (12022): Found design unit 1: Register_N_bits-arch_Register
+    Info (12023): Found entity 1: Register_N_bits
+Info (12021): Found 2 design units, including 1 entities, in source file Comparador.vhd
+    Info (12022): Found design unit 1: Comparador-Arch_Comp
+    Info (12023): Found entity 1: Comparador
+Info (12021): Found 2 design units, including 1 entities, in source file decodLedr.vhd
+    Info (12022): Found design unit 1: decodLedr-decod
+    Info (12023): Found entity 1: decodLedr
+Info (12021): Found 2 design units, including 1 entities, in source file Mux2_1_10bits.vhd
+    Info (12022): Found design unit 1: Mux2_1_10bits-MUX_arch
+    Info (12023): Found entity 1: Mux2_1_10bits
+Info (12021): Found 2 design units, including 1 entities, in source file Register_Shift.vhd
+    Info (12022): Found design unit 1: Register_Shift-arch_Register
+    Info (12023): Found entity 1: Register_Shift
+Info (12021): Found 2 design units, including 1 entities, in source file Mux4_1_8_bit.vhd
+    Info (12022): Found design unit 1: Mux4_1_8_bit-MUX_arch
+    Info (12023): Found entity 1: Mux4_1_8_bit
+Info (12021): Found 2 design units, including 1 entities, in source file Mux4_1_1_bit.vhd
+    Info (12022): Found design unit 1: Mux4_1_1_bit-MUX_arch
+    Info (12023): Found entity 1: Mux4_1_1_bit
+Info (12127): Elaborating entity "Data_Path" for the top level hierarchy
+Info (12128): Elaborating entity "Clocks" for hierarchy "Clocks:Clocks_Source"
+Info (12128): Elaborating entity "Mux4_1_1_bit" for hierarchy "Mux4_1_1_bit:Mux_Clocks"
+Info (12128): Elaborating entity "Counter_Signal_out" for hierarchy "Counter_Signal_out:Counter_Time"
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:Counter_Rom"
+Info (12128): Elaborating entity "Comparador" for hierarchy "Comparador:Comparador_4_bit"
+Info (12128): Elaborating entity "ROM" for hierarchy "ROM:ROM_mem"
+Info (12128): Elaborating entity "Register_Shift" for hierarchy "Register_Shift:Reg_Shift_Rom"
+Info (12128): Elaborating entity "Comparador" for hierarchy "Comparador:Comparador_64_bit"
+Info (12128): Elaborating entity "decodLedr" for hierarchy "decodLedr:decod_Ponct_led"
+Info (12128): Elaborating entity "Register_N_bits" for hierarchy "Register_N_bits:Reg_Ledr"
+Info (12128): Elaborating entity "Mux2_1_10bits" for hierarchy "Mux2_1_10bits:Mux_led"
+Info (12128): Elaborating entity "Mux4_1_8_bit" for hierarchy "Mux4_1_8_bit:Mux_ponctuation"
+Info (12128): Elaborating entity "decod7seg" for hierarchy "decod7seg:decod_Ponct_7seg0"
+Info (12128): Elaborating entity "Register_N_bits" for hierarchy "Register_N_bits:Reg_7seg"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Mux4_1_1_bit:Mux_Clocks|Output
+    Warning (19017): Found clock multiplexer Mux4_1_1_bit:Mux_Clocks|Output~0
+    Warning (19017): Found clock multiplexer Mux4_1_1_bit:Mux_Clocks|Output~1
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX03[0]" is stuck at VCC
+    Warning (13410): Pin "HEX03[1]" is stuck at VCC
+    Warning (13410): Pin "HEX03[2]" is stuck at VCC
+    Warning (13410): Pin "HEX03[3]" is stuck at GND
+    Warning (13410): Pin "HEX03[4]" is stuck at GND
+    Warning (13410): Pin "HEX03[5]" is stuck at GND
+    Warning (13410): Pin "HEX03[6]" is stuck at GND
+    Warning (13410): Pin "HEX04[1]" is stuck at GND
+    Warning (13410): Pin "HEX05[0]" is stuck at VCC
+    Warning (13410): Pin "HEX05[1]" is stuck at VCC
+    Warning (13410): Pin "HEX05[2]" is stuck at VCC
+    Warning (13410): Pin "HEX05[3]" is stuck at GND
+    Warning (13410): Pin "HEX05[4]" is stuck at GND
+    Warning (13410): Pin "HEX05[5]" is stuck at GND
+    Warning (13410): Pin "HEX05[6]" is stuck at VCC
+    Warning (13410): Pin "LED[4]" is stuck at GND
+    Warning (13410): Pin "LED[5]" is stuck at GND
+    Warning (13410): Pin "LED[6]" is stuck at GND
+    Warning (13410): Pin "LED[7]" is stuck at GND
+    Warning (13410): Pin "LED[8]" is stuck at GND
+    Warning (13410): Pin "LED[9]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 499 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 55 output pins
+    Info (21061): Implemented 430 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 1070 megabytes
+    Info: Processing ended: Fri Apr 20 19:48:50 2018
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:40
+
+

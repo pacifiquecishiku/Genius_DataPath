@@ -16,9 +16,11 @@ begin
 process(Clock,Enable,Reset) is
 begin
 	if Reset = '1' then
-		output <= X"0";
+		output <= (others => '0');
 	elsif rising_edge(Clock) then
-		if Enable = '1'
+		if Enable = '1' then
 			output <= input;
 		end if;
 	end if;
+end process;
+end arch_Register;
