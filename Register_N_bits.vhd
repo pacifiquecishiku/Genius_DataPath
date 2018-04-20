@@ -15,10 +15,10 @@ begin
 
 process(Clock,Enable,Reset) is
 begin
-	if Reset = 1 then
-		output <= 0;
+	if Reset = '1' then
+		output <= X"0";
 	elsif rising_edge(Clock) then
-		if Enable = 1
+		if Enable = '1'
 			output <= input;
 		end if;
 	end if;

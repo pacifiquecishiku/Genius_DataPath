@@ -60,4 +60,5 @@ set_global_assignment -name VHDL_FILE Comparador.vhd
 set_global_assignment -name VHDL_FILE decodLedr.vhd
 set_global_assignment -name VHDL_FILE Mux2_1_10bits.vhd
 set_global_assignment -name VHDL_FILE Register_Shift.vhd
-set_global_assignment -name VHDL_FILE Mux4_1_N_bit.vhd
+set_global_assignment -name VHDL_FILE Mux4_1_8_bit.vhd
+set_global_assignment -name VHDL_FILE Mux4_1_1_bit.vhd
